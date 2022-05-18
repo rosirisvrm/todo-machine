@@ -1,11 +1,8 @@
 import React from 'react'
-import { TodoContext } from '../TodoContext'
 import './TodoForm.css'
 
-function TodoForm(){
-
-    const { addTodo, editTodo, setOpenModal, formAction, editingTodoText } = React.useContext(TodoContext)
-
+function TodoForm({ addTodo, editTodo, setOpenModal, formAction, editingTodoText }){
+    
     const [todoText, setTodoText] = React.useState(formAction === 'add' ? '' : editingTodoText)
     const [showMessage, setShowMessage] = React.useState(false)
 

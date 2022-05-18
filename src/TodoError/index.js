@@ -2,7 +2,7 @@ import React from 'react'
 
 function TodoError(){
     return(
-        <p className='p-message'>Ha ocurrido un error</p>
+        <p style={{ textAlign: 'center'}}>Ha ocurrido un error</p>
     );
 }
 
