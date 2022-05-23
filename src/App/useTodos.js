@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocalStorage } from './useLocalStorage'
 
-function useTodos(props){
+function useTodos(){
 
     const {
         item: todos, 
@@ -18,8 +18,8 @@ function useTodos(props){
 
     const completedTodos = todos.filter(todo => todo.completed).length
     const allTodos = todos.length
-
-    const searchedTodos = searchValue.length >= 1 ? todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase())) : todos;
+    const searchedTodos = searchValue.length >= 1 ? 
+        todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase())) : todos;
 
     const addTodo = (text) => {
         let newTodos = [...todos]
@@ -66,26 +66,31 @@ function useTodos(props){
         saveTodos(newTodos)
     }
 
-    return({
+    const state = {
         loading,
         error,
         completedTodos,
         allTodos,
         searchValue,
-        setSearchValue,
         searchedTodos,
+        openModal,
+        formAction,
+        editingTodoText,
+    }
+
+    const stateUpdaters = {        
+        setSearchValue,
         addTodo,
         onEdit,
         editTodo,
         completeTodo,
         deleteTodo,
-        openModal,
         setOpenModal,
-        formAction,
         setFormAction,
-        editingTodoText,
         sincronizeTodos
-    });
+    }
+
+    return ({ state, stateUpdaters })
 }
 
 export { useTodos };

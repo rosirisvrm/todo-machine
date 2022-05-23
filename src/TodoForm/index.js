@@ -4,11 +4,11 @@ import './TodoForm.css'
 function TodoForm({ addTodo, editTodo, setOpenModal, formAction, editingTodoText }){
     
     const [todoText, setTodoText] = React.useState(formAction === 'add' ? '' : editingTodoText)
-    const [showMessage, setShowMessage] = React.useState(false)
+    const [showErrorMessage, setShowErrorMessage] = React.useState(false)
 
     const onChange = (event) => {
-        if(showMessage){
-            setShowMessage(false)
+        if(showErrorMessage){
+            setShowErrorMessage(false)
         }
 
         setTodoText(event.target.value)
@@ -18,7 +18,7 @@ function TodoForm({ addTodo, editTodo, setOpenModal, formAction, editingTodoText
         event.preventDefault();
 
         if(!todoText){
-            setShowMessage(true)
+            setShowErrorMessage(true)
             return;
         }   
 
@@ -43,7 +43,7 @@ function TodoForm({ addTodo, editTodo, setOpenModal, formAction, editingTodoText
                 value={todoText}
                 onChange={onChange}
             />
-            {showMessage && <p style={{ textAlign: 'center' }}>El texto del TODO no puede estar vacío</p>}
+            {showErrorMessage && <p style={{ textAlign: 'center' }}>El texto del TODO no puede estar vacío</p>}
             <div className="TodoForm-buttonContainer">
                 <button 
                     type="button"
