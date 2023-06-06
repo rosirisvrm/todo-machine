@@ -7,12 +7,12 @@
     width: 48px;
 }
 
-.Icon-container--check{
+/* .Icon-container--check{
     position: absolute;
     left: 12px;
-}
+} */
 
-.Icon-container--delete{
+/* .Icon-container--delete{
     position: absolute;
     top: -24px;
     right: 0;
@@ -20,8 +20,9 @@
 
 .Icon-container--edit{
     position: absolute;
-    right: 36px;
-}
+    bottom: -24px;
+    right: 0;
+} */
 
 .Icon-svg{
     width: 24px;

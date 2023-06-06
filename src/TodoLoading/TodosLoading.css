@@ -30,11 +30,11 @@
     left: 12px;
   }
   
-  .LoadingTodo-deleteIcon {
+  /* .LoadingTodo-deleteIcon {
     position: absolute;
     top: -24px;
     right: 0;
-  }
+  } */
   
   .LoadingTodo-container,
   .LoadingTodo-completeIcon,

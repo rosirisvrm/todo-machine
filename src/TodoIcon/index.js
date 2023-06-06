@@ -1,7 +1,7 @@
 import React from 'react'
 import { ReactComponent as CheckIcon } from './check.svg'
 import { ReactComponent as DeleteIcon } from './delete.svg'
-import { ReactComponent as EditIcon } from './more.svg'
+import { ReactComponent as EditIcon } from './edit.svg'
 import './TodoIcon.css';
 
 function TodoIcon({ type = 'check', color = 'darkgray', onClick }){
